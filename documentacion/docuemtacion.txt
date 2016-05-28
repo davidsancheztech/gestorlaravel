@@ -1,0 +1,40 @@
+- Crear la estructura de laravel5
+composer create-project laravel/laravel=5.0
+
+- Comandos de Laravel
+php artisan list
+
+Establecer nombre al proyecto
+consola: php artisan app:name GestorImaganes
+archivo: .env
+
+- Creando migraciones (BD)
+cd www/GestorImagenes
+php artisan list (Para que nos muestre todos los make)
+
+php artisan make:migration --create= "albumes" crearTablaAlbumes
+(Ordenar las tablas por relación)
+
+Luego vemos los archivos php en la carpeta “database/migrations”
+
+	$table->increments('id');
+	$table->string('nombre');
+	$table->string('descripcion');
+	$table->integer('usuario_id');
+	$table->foreign('usuario')->references('id')->on('usuarios');
+	$table->timestamps();
+
+Generamos las tablas en la base de datos mediante la consola
+php artisan migrate
+
+- Rellenar campos de la base de datos con los archivos “database/migrations/***sedder.php”
+Antes creamos las nuevas definiciones “composer dumpautoload”
+
+php artisan db:seed
+
+- Alimentar y crear las migraciones
+php artisan migrate:refresh --seed
+
+- Creando REQUEST con consola
+“php artisan make:request IniciarSessionRequest”
+Dentro de la carpeta app/http/request
