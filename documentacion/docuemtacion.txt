@@ -4,6 +4,9 @@ composer create-project laravel/laravel=5.0
 - Comandos de Laravel
 php artisan list
 
+- Crear la autenticaci—n, por defecto en versiones 5.1 no est‡.
+php artisan make:auth
+
 Establecer nombre al proyecto
 consola: php artisan app:name GestorImaganes
 archivo: .env
